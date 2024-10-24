@@ -1,0 +1,555 @@
+:root {
+    --primary-color: #1a73e8;
+    --secondary-color: #5f6368;
+    --background-color: #f1f3f4;
+    --surface-color: #ffffff;
+    --text-color: #202124;
+    --border-color: #dadce0;
+    --shadow-color: rgba(60, 64, 67, 0.3);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+#app {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: var(--surface-color);
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 2px 0 var(--shadow-color);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.logo i {
+    margin-right: 8px;
+}
+
+.btn {
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--surface-color);
+}
+
+.btn-primary:hover {
+    background-color: #1765cc;
+    box-shadow: 0 1px 2px 0 var(--shadow-color);
+}
+
+.btn-secondary {
+    background-color: var(--surface-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: #e8f0fe;
+}
+
+.section {
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    box-shadow: 0 1px 2px 0 var(--shadow-color);
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+#formTitle {
+    font-size: 32px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 24px;
+    background-color: transparent;
+}
+
+/* Field Actions Styling */
+.field-actions {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.field-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--secondary-color);
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.field-actions button:hover {
+    color: var(--primary-color);
+}
+
+/* Checkbox Styling */
+.field label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.field label input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Field Container Styling */
+.field {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    transition: box-shadow 0.3s;
+}
+
+.field:hover {
+    box-shadow: 0 1px 3px 0 var(--shadow-color);
+}
+
+.field-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.field input[type="text"],
+.field textarea,
+.preview-field input[type="text"],
+.preview-field textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.field input[type="text"]:focus,
+.field textarea:focus,
+.preview-field input[type="text"]:focus,
+.preview-field textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* Field Actions Styling */
+.field-actions {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.field-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--secondary-color);
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.field-actions button:hover {
+    color: var(--primary-color);
+}
+
+/* Checkbox Styling */
+.field label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.field label input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Field Container Styling */
+.field {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    transition: box-shadow 0.3s;
+}
+
+.field:hover {
+    box-shadow: 0 1px 3px 0 var(--shadow-color);
+}
+
+/* ... existing styles ... */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: var(--surface-color);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 var(--shadow-color);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.modal-content select,
+.modal-content input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.form-list li {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.form-list li:hover {
+    box-shadow: 0 1px 3px 0 var(--shadow-color);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.options-container {
+    margin-top: 12px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.option input[type="radio"],
+.option input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.option-text {
+    flex-grow: 1;
+    margin-right: 8px;
+}
+
+.delete-option {
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.delete-option:hover {
+    color: #d93025;
+}
+
+.add-option {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 8px 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.preview-field {
+    margin-bottom: 24px;
+}
+
+.preview-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.preview-field input[type="radio"],
+.preview-field input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.preview-field .option {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 600px) {
+    #app {
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+}
+
+
+/* View as End User Button Styles */
+.btn-view {
+    background-color: var(--primary-color);
+    color: var(--surface-color);
+    padding: 5px 10px;
+    font-size: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-view:hover {
+    background-color: #1765cc;
+    box-shadow: 0 1px 2px 0 var(--shadow-color);
+}
+
+/* Delete Button Styles */
+.btn-delete {
+    background-color: #d93025;
+    color: var(--surface-color);
+    padding: 5px 10px;
+    font-size: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: #b3261e;
+    box-shadow: 0 1px 2px 0 var(--shadow-color);
+}
+
+/* Form List Item Styles */
+.form-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.form-list li:hover {
+    box-shadow: 0 1px 3px 0 var(--shadow-color);
+    transform: translateY(-2px);
+}
+
+.form-list li .form-title {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+/* Interactive Content Styles */
+#interactiveContent {
+    padding: 24px;
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 var(--shadow-color);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.interactive-field {
+    margin-bottom: 24px;
+    padding: 16px;
+    background-color: #f9f9f9;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px 0 var(--shadow-color);
+    transition: box-shadow 0.3s;
+}
+
+.interactive-field:hover {
+    box-shadow: 0 2px 4px 0 var(--shadow-color);
+}
+
+.interactive-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.interactive-field input[type="text"],
+.interactive-field textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    margin-top: 4px;
+}
+
+.interactive-field input[type="text"]:focus,
+.interactive-field textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.interactive-field .options-container {
+    margin-top: 12px;
+}
+
+.interactive-field .option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.interactive-field .option input[type="radio"],
+.interactive-field .option input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.interactive-field .option label {
+    margin-left: 8px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+#interactiveContent .btn-primary {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: var(--primary-color);
+    color: var(--surface-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#interactiveContent .btn-primary:hover {
+    background-color: #1765cc;
+    box-shadow: 0 2px 4px 0 var(--shadow-color);
+}
+
+/* Interactive Field Styling */
+.interactive-field textarea {
+    width: 100%;
+    height: 150px; /* Set a more generous height for the textarea */
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    margin-top: 4px;
+    resize: vertical; /* Allow vertical resizing */
+    background-color: #fff; /* Ensure a consistent background color */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Add subtle inner shadow */
+}
+
+.interactive-field textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); /* Enhance shadow on focus */
+}

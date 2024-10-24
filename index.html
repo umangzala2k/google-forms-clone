@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Form Builder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="logo">
+                <i class="fas fa-file-alt"></i>
+                <span>Google Forms</span>
+            </div>
+            <nav>
+                <button id="createNewForm" class="btn btn-primary">Create New Form</button>
+                <button id="viewAllForms" class="btn btn-secondary">View All Forms</button>
+            </nav>
+        </header>
+        <main>
+            <div id="formBuilder" class="section">
+                <input type="text" id="formTitle" placeholder="Untitled form" aria-label="Form title">
+                <div id="formFields"></div>
+                <div class="button-group">
+                    <button id="addField" class="btn btn-secondary">
+                        <i class="fas fa-plus"></i> Add Question
+                    </button>
+                    <button id="previewForm" class="btn btn-secondary">Preview Form</button>
+                    <button id="saveForm" class="btn btn-primary">Save Form</button>
+                </div>
+            </div>
+            <div id="formList" class="section" style="display: none;">
+                <h2>Your Forms</h2>
+                <ul id="savedForms" class="form-list"></ul>
+            </div>
+            <div id="formPreview" class="section" style="display: none;">
+                <h2>Form Preview</h2>
+                <div id="previewContent"></div>
+                <button id="submitForm" class="btn btn-primary">Submit</button>
+            </div>
+            <div id="formResponses" class="section" style="display: none;">
+                <h2>Form Responses</h2>
+                <div id="responsesContent"></div>
+            </div>
+            <div id="formInteractive" class="section" style="display: none;">
+                <h2>Interactive Form</h2>
+                <div id="interactiveContent"></div>
+            </div>
+        </main>
+    </div>
+    <div id="fieldTypeModal" class="modal">
+        <div class="modal-content">
+            <h2>Add Question</h2>
+            <select id="fieldType" aria-label="Field type">
+                <option value="text">Short answer</option>
+                <option value="textarea">Paragraph</option>
+                <option value="radio">Multiple choice</option>
+                <option value="checkbox">Checkboxes</option>
+            </select>
+            <input type="text" id="fieldLabel" placeholder="Question" aria-label="Question label">
+            <div class="button-group">
+                <button id="confirmAddField" class="btn btn-primary">Add</button>
+                <button id="cancelAddField" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
